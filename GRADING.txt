@@ -1,0 +1,18 @@
+Definition of Game Objects
+	Separated pacman, ball, ghosts, and maze as different 'objects'.
+
+Animation of Game Objects
+	Ghosts refresh with maze
+	Pacman 'animated' by varying the angles to open/close mouth with arc function
+		Movement animations for "movement" and direction
+		Dying animation when a life is lost
+
+Interaction between Game Objects
+	Pacman and ghosts are stopped by walls (cannot go through them).
+	Pacman collides with ghost and a life is lost.
+	Pacman collides with coin and picks it up, increasing score.
+	
+Keeping score
+	Increase scores by picking up coins
+
+	

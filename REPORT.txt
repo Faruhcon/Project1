@@ -1,0 +1,44 @@
+My game is a rendition of Pacman. You have 3 lives and the game is over when they are all lost.
+The score increases (+10) by collecting coins places around the maze (there is no "winning", only game over).
+There are two "ghosts" which follow the player (pacman) around the maze.
+	These ghosts alternate between two behaviour patterns (chase and scatter.)
+		There is a time limit to this altering, after a few switches, 
+		the ghosts stay in chase mode.
+	These behaviour patterns revolve around reaching a target tile.
+	For the scatter pattern, this target tile is an unreachable tile on the edge of the maze.
+	For the chase pattern, the target tile is different for each ghost.
+		For the red ghost (Blinky), the target tile is pacman's current location.
+		For the pink ghost (Pinky), the target tile is 4 tiles in front of pacman.
+			Which means you can play a game of chicken with pinky when he is in chase mode.
+	Ghosts also cannot reverse direction EXCEPT during mode change.
+		So if a ghost enters a tile that only has two exits, it must continue in the same direction.
+		The above behaviours only apply when the ghost enters a 3- or 4-way intersection.
+			The next tile is determined by picking the tile that is closest to the target tile.
+			The ghosts only "think" one tile ahead, so the actual path might be longer but that given tile was closer.
+A life is lost when pacman collides with one of the ghosts.
+	Upon death, pacman and ghosts return to starting positions, 
+		coins are not reset, score is persistent (until game over).
+Coins are picked up when pacman collides with them (ghosts cannot picked them up).
+	Collision is determined by consulting the movement grid.
+	When pacman and a ghost (or coin) inhabit the same tile in the grid, they have collided.
+Blinky (red) starts outside of the ghost house.
+Pinky (pink) starts inside of the ghost house and emerges after the player has collected one coin.
+The maze refreshes every frame.
+	The ghosts and coins are drawn along with the maze.
+	This is done by consulting a grid which indicates the location of the ghosts and walls.
+	Another grid is used to determine location of remaining coins.
+Pacman is drawn independently of maze.
+	His animations are done using the arc function and varying the angle to open and close his mouth.
+	His direction is indicated by the direction his "mouth" is pointing.
+	He has a dying animation! (He will continue opening his mouth until he disappears).
+There are no power ups (sorry, no ghost eating! :()).
+The player's current score and remaining lives are displayed at the bottom of the screen.
+
+CONTROLS:
+	Press the spacebar to start the game (as the start up screen says!)
+	Use the arrow keys to move pacman around the maze.
+		You do not have to keep holding them down. 
+		He will continue moving in the same direction until the player presses 
+			another arrow key, he hits a wall, or he collides with a ghost.
+			
+There is a tendency for pacman to go beyond the ghost after colliding but it should still register collision.
