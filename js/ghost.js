@@ -133,7 +133,7 @@ function ghost(x,y,color,sX,sY,house,pacman,maze,num){
                     newY = this.currY - 1;
                 }
             }
-            if (this.movingDir != UP && !this.maze.checkWall(this.currX, this.currY + 1)) {//this.faceDir != MOUTH_UP &&
+            if (this.movingDir != UP && !this.maze.checkWall(this.currX, this.currY + 1)) {
                 distance = ((this.currY + 1) - this.targetY) * ((this.currY + 1) - this.targetY) + (this.currX - this.targetX) * (this.currX - this.targetX);
                 if (distance < shortestDistance) {
                     shortestDistance = distance;
@@ -141,7 +141,7 @@ function ghost(x,y,color,sX,sY,house,pacman,maze,num){
                     newY = this.currY + 1;
                 }
             }
-            if (this.movingDir != RIGHT && !this.maze.checkWall(this.currX - 1, this.currY)) {//this.faceDir != MOUTH_RIGHT &&
+            if (this.movingDir != RIGHT && !this.maze.checkWall(this.currX - 1, this.currY)) {
                 distance = (this.currY - this.targetY) * (this.currY - this.targetY) + ((this.currX - 1) - this.targetX) * ((this.currX - 1) - this.targetX);
                 if (distance < shortestDistance) {
                     shortestDistance = distance;
@@ -149,7 +149,7 @@ function ghost(x,y,color,sX,sY,house,pacman,maze,num){
                     newY = this.currY;
                 }
             }
-            if (this.movingDir != LEFT && !this.maze.checkWall(this.currX + 1, this.currY)) {//this.faceDir != MOUTH_LEFT &&
+            if (this.movingDir != LEFT && !this.maze.checkWall(this.currX + 1, this.currY)) {
                 distance = (this.currY - this.targetY) * (this.currY - this.targetY) + ((this.currX + 1) - this.targetX) * ((this.currX + 1) - this.targetX);
                 if (distance < shortestDistance) {
                     shortestDistance = distance;
